@@ -12,8 +12,6 @@ body {
     justify-content: center;
     align-items: center;
     display:none;
-
-
 }
 .modal-content{
     width: 550px;
@@ -24,7 +22,6 @@ body {
     padding: 20px;
     position: relative;
     text-align: center;
-
 }
 .close{
     position: absolute;
@@ -33,5 +30,4 @@ body {
     font-size: 20px;
     transform: rotate(45deg);
     cursor: pointer;
-
 }

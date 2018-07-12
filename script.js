@@ -5,15 +5,12 @@ let nameUserList = [];
 let ageUserList = [];
 let a = 0;
 let i = 0;
-
-
 function addRow()
 {
   var name = document.getElementById('name').value;
   var age = document.getElementById('age').value;
   namelist.push(name);
   console.log(namelist);
-  
   agelist.push(age);
   localStorage.setItem("name"+a, name);
   localStorage.setItem("age"+a, age);
@@ -22,15 +19,12 @@ function addRow()
   if(name!="" && age!="")
   {
     var table = document.getElementsByTagName('table')[0];
-      
       var newRow = table.insertRow(-1);
-      
       // add cells to the row
       var NAME = newRow.insertCell(0);
       var AGE = newRow.insertCell(1);
       var VOWEL = newRow.insertCell(2);
       var CHECK = newRow.insertCell(3);
-     
 if(name.match(/[aeiouAEIOU]/))
 {
       status = "YES";
@@ -39,7 +33,6 @@ else
 {
      status = "NO";
 }   
-
       NAME.innerHTML = name;
       AGE.innerHTML = age;
       VOWEL.innerHTML = status;
@@ -48,22 +41,16 @@ else
   else
   {
     alert("PLEASE FILL ALL THE FIELDS")
-  }
-
-      
+  }  
 }
 function checkIt()
 {      
     document.querySelector(".bg-modal").style.display ="block" ;
-    
     const nI = document.getElementById("name");
     const aI = document.getElementById("age");
     const vO = document.getElementById("pop-up");
-   
     nameInput = nI.value;
-    ageInput = aI.value;
-    
-     
+    ageInput = aI.value; 
    var vow=0;
    var str = nI.value;
    var n=str.length;
@@ -71,30 +58,22 @@ function checkIt()
    {
      if (str[i] == 'A'|| str[i] == 'a'||str[i] == 'E'|| str[i] == 'e'||str[i] == 'I'|| str[i] == 'i'||str[i] == 'O'|| str[i] == 'o'||str[i] == 'U'|| str[i] == 'u')
      vow++;
-   
    }
-
    if(ageInput>18)
    {
-    var msg = "The no of vowels are : "+vow+"R";
+    var msg = "The no of vowels are : "+vow;
    }
-
      else
     {
       
      var msg = "The no of vowels are : "+vow+"----REGISTRATION DENIED----  as you are too young";
    }
-   
-   vO.innerHTML = msg;
-  
-   
+   vO.innerHTML = msg; 
    document.querySelector('.close').addEventListener('click',function(){
        document.querySelector(".bg-modal").style.display ="none" ;   
    });
    }
    function sendData(){
-    
-
     let nameUser;
     let limit = localStorage.getItem('max');
     for(let i = 0 ; i<limit ; i++)
@@ -113,22 +92,16 @@ function checkIt()
     for(let z = 0; i<limit ; z++)
     {
         console.log(z);
-
         let table = document.getElementById("table-display");
         let button = document.createElement("BUTTON");        // Create a <button> element
         let text = document.createTextNode("Check");       // Create a text node
         button.appendChild(text);                        
-        
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
         let td2 = document.createElement("td");
         let td3 = document.createElement("td");
-   
-    
         let txt1 = document.createTextNode(nameUserList[z]);
         let txt2 = document.createTextNode(ageUserList[z]);
-    
-    
         button.id = "Check"+i; i++;
         // button.onClick="checkVowel()";
         // button.Attributes.add("onclick","checkVowel()");
@@ -143,5 +116,4 @@ function checkIt()
         tr.appendChild(td3);
         table.appendChild(tr);
     }
-    
 }  
