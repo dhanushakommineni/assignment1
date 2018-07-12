@@ -61,12 +61,12 @@ function checkIt()
    }
    if(ageInput>18)
    {
-    var msg = "The no of vowels are : "+vow;
+    var msg = "The no of vowels are : "+vow+ "and major";
    }
      else
     {
       
-     var msg = "The no of vowels are : "+vow+"----REGISTRATION DENIED----  as you are too young";
+     var msg = "The no of vowels are : "+vow+"and minor";
    }
    vO.innerHTML = msg; 
    document.querySelector('.close').addEventListener('click',function(){
